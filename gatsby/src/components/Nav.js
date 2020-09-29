@@ -50,29 +50,21 @@ export default function Nav() {
     <NavStyles>
       <ul>
         <li>
-          <Link to="/">
-            <a>Hot Now</a>
-          </Link>
+          <Link to="/">Hot Now</Link>
         </li>
         <li>
-          <Link to="/pizzas">
-            <a>Pizza Menu</a>
-          </Link>
+          <Link to="/pizzas/">Pizza Menu</Link>
         </li>
-        <li>
+        <li className="logo-item">
           <Link to="/">
             <Logo />
           </Link>
         </li>
         <li>
-          <Link to="/slicemasters">
-            <a>SliceMasters</a>
-          </Link>
+          <Link to="/slicemasters">SliceMasters</Link>
         </li>
         <li>
-          <Link to="/order">
-            <a>Order Ahead!</a>
-          </Link>
+          <Link to="/order">Order Ahead!</Link>
         </li>
       </ul>
     </NavStyles>
