@@ -1,1 +1,1 @@
-# Slick Slices, a Gatsby project from the Gatsby course by Wes Bos
+# Slick's Slices, a Gatsby project from the Master Gatsby course by Wes Bos
