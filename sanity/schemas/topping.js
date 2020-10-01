@@ -20,6 +20,15 @@ export default {
       type: 'boolean',
       description: 'Is this topping suitable for vegetarians?',
     },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 100,
+      },
+    },
   ],
   preview: {
     select: {
