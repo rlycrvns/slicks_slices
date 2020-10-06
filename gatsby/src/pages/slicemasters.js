@@ -38,12 +38,11 @@ const SliceMasterStyles = styled.div`
 
 export default function SliceMastersPage({ data }) {
   const slicemasters = data.slicemasters.nodes;
-  console.log(slicemasters);
   return (
     <>
       <SlicemasterGrid>
         {slicemasters.map((person) => (
-          <SliceMasterStyles>
+          <SliceMasterStyles key={person.id}>
             <Link to={`/slicemaster/${person.slug.current}`}>
               <h2>
                 <span className="mark">{person.name}</span>
