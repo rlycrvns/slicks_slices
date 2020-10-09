@@ -7,8 +7,10 @@ export default {
     title: `Slicks Slices`,
     siteUrl: 'https://gatsbypizza.pizza',
     description: 'The best pizza place in Portland!',
+    twitter: '@slicesSlices',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-sanity',
