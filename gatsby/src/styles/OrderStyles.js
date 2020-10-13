@@ -22,6 +22,10 @@ const OrderStyles = styled.form`
       /* Chrome is weird about Grid and fieldsets, so we add a fixed height to fix it :)  */
       height: 600px;
     }
+    .submit {
+      margin-top: 1rem;
+      width: 100%;
+    }
   }
   .mapleSyrup {
     display: none;
