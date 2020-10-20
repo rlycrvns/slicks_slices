@@ -15,6 +15,7 @@ export default function OrderPage({ data }) {
   const { values, updateValue } = useForm({
     name: '',
     email: '',
+    magicRing: '',
   });
   const pizzas = data.pizzas.nodes;
   const { order, addToOrder, removeFromOrder, error, loading, message, submitOrder } = usePizza({
@@ -38,6 +39,14 @@ export default function OrderPage({ data }) {
           <label htmlFor="email">
             Email
             <input id="email" type="email" name="email" value={values.email} onChange={updateValue} />
+            <input
+              id="magicRing"
+              type="magicRing"
+              name="magicRing"
+              className="magicRing"
+              value={values.magicRing}
+              onChange={updateValue}
+            />
           </label>
         </fieldset>
         <fieldset disabled={loading} className="menu">

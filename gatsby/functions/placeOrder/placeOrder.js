@@ -45,6 +45,13 @@ function wait(ms = 0) {
 
 exports.handler = async (event, context) => {
   const body = JSON.parse(event.body);
+  // check for the honey pot
+  if (body.magicRing) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'No Bots Allowed' }),
+    };
+  }
   // validate the data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
 
