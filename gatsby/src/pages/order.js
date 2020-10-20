@@ -49,8 +49,8 @@ export default function OrderPage({ data }) {
                 <h2>{pizza.name}</h2>
               </div>
               <div>
-                {['S', 'M', 'L'].map((size) => (
-                  <button type="button" onClick={() => addToOrder({ id: pizza.id, size })}>
+                {['S', 'M', 'L'].map((size, index) => (
+                  <button key={index} type="button" onClick={() => addToOrder({ id: pizza.id, size })}>
                     {size} {formatMoney(calculatePizzaPrice(pizza.price, size))}
                   </button>
                 ))}
