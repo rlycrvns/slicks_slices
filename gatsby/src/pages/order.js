@@ -17,11 +17,17 @@ export default function OrderPage({ data }) {
     email: '',
   });
   const pizzas = data.pizzas.nodes;
-  const { order, addToOrder, removeFromOrder } = usePizza({ pizzas, inputs: values });
+  const { order, addToOrder, removeFromOrder, error, loading, message, submitOrder } = usePizza({
+    pizzas,
+    values,
+  });
+  if (message) {
+    return <p>{message}</p>;
+  }
   return (
     <>
       <SEO title="Order a Pizza!" />
-      <OrderStyles>
+      <OrderStyles onSubmit={submitOrder}>
         <fieldset>
           <legend>Your Info</legend>
           <label htmlFor="name">
@@ -37,7 +43,7 @@ export default function OrderPage({ data }) {
         <fieldset className="menu">
           <legend>Menu</legend>
           {pizzas.map((pizza) => (
-            <MenuItemStyles keu={pizza.id}>
+            <MenuItemStyles key={pizza.id}>
               <Img width="50" height="50" fluid={pizza.image.asset.fluid} alt={pizza.name} />
               <div>
                 <h2>{pizza.name}</h2>
@@ -57,8 +63,11 @@ export default function OrderPage({ data }) {
           <PizzaOrder order={order} pizzas={pizzas} removeFromOrder={removeFromOrder} />
         </fieldset>
         <fieldset>
-          <h3>Your Total is {formatMoney(calculateOrderTotal(order, pizzas))}</h3>
-          <button type="submit">Order Ahead</button>
+          <h3 className="center">Your Total is {formatMoney(calculateOrderTotal(order, pizzas))}</h3>
+          <div>{error ? <p>Error: {error}</p> : ''}</div>
+          <button className="submit" type="submit" disabled={loading}>
+            {loading ? 'Placing Order...' : 'Order Ahead'}
+          </button>
         </fieldset>
       </OrderStyles>
     </>
