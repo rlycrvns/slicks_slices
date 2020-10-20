@@ -54,7 +54,7 @@ export default function usePizza({ pizzas, values }) {
       setError(text.message);
     } else {
       setLoading(false);
-      setError('We have received your order!');
+      setMessage('Success! We have received your order!');
     }
   }
 
