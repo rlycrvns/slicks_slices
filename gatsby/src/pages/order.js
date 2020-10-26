@@ -57,7 +57,7 @@ export default function OrderPage({ data }) {
               <div>
                 <h2>{pizza.name}</h2>
               </div>
-              <div>
+              <div className="order-btns">
                 {['S', 'M', 'L'].map((size, index) => (
                   <button key={index} type="button" onClick={() => addToOrder({ id: pizza.id, size })}>
                     {size} {formatMoney(calculatePizzaPrice(pizza.price, size))}

@@ -32,6 +32,18 @@ const MenuItemStyles = styled.div`
     box-shadow: none;
     line-height: 1rem;
   }
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+    gap: 0 2rem;
+    margin-bottom: 2rem;
+    .order-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .button {
+      margin: 0;
+    }
+  }
 `;
 
 export default MenuItemStyles;
